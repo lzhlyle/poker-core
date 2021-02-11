@@ -2,10 +2,15 @@ package com.lzhlyle.poker.core.card;
 
 import java.util.Objects;
 
+/**
+ * 单张扑克牌
+ */
 public class PokerCard implements Comparable<PokerCard> {
     private int color, value;
 
-    // color
+    /**
+     * 花色
+     */
     public static final int JOKER_SSS = 6; // 大王
     public static final int JOKER_SS = 5; // 小王
     public static final int COLOR_SPADE = 4; // 黑桃
@@ -13,11 +18,22 @@ public class PokerCard implements Comparable<PokerCard> {
     public static final int COLOR_CLUB = 2; // 梅花
     public static final int COLOR_DIAMOND = 1; // 方块
 
+    /**
+     * 花色扑克
+     *
+     * @param color
+     * @param value
+     */
     public PokerCard(int color, int value) {
         this.color = color;
         this.value = value;
     }
 
+    /**
+     * 扑克王
+     *
+     * @param joker
+     */
     public PokerCard(int joker) {
         this.color = joker;
         this.value = 0;
@@ -41,6 +57,7 @@ public class PokerCard implements Comparable<PokerCard> {
         // value first
         int valueCompare = Integer.compare(this.value, card.value);
         if (valueCompare != 0) return valueCompare;
+
         // color second
         return Integer.compare(this.color, card.color);
     }

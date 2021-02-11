@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * 发牌者
+ */
 public class PokerDealer {
     private static PokerDealer ourInstance = new PokerDealer();
 
@@ -17,12 +20,22 @@ public class PokerDealer {
 
     }
 
-    // 洗牌
+    /**
+     * 洗牌
+     *
+     * @param cards
+     */
     public void shuffle(List<PokerCard> cards) {
         Collections.shuffle(cards);
     }
 
-    // 发牌
+    /**
+     * 发牌
+     *
+     * @param cards
+     * @param n     发牌张数
+     * @return
+     */
     public List<PokerCard> deal(List<PokerCard> cards, int n) {
         if (n < 1 || n > cards.size()) throw new ArrayIndexOutOfBoundsException(n);
         List<PokerCard> res = new ArrayList<>(n);
